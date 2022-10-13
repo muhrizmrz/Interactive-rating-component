@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          'sm': '375px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1440px'
+        },
+        extend: {
+          colors: {
+            Orange: 'hsl(25, 97%, 53%)',
+            LightGrey: 'hsl(217, 12%, 63%)',
+            activeGrey: 'hsl(216, 12%, 54%)',
+            MediumGrey: 'hsl(216, 10%, 23%)',
+            DarkBlue: 'hsl(213, 19%, 18%)',
+            VeryDarkBlue: 'hsl(216, 12%, 8%)',
+            White: 'hsl(0, 0%, 100%)'
+          },
+          fontFamily: {
+            'Overpass': 'Overpass, sans-serif'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+
+</head>
+<body>
+
+  <!-- Rating state start -->
+  <main class="w-full h-screen bg-VeryDarkBlue grid place-items-center">
+
+    <!------RATING SELELCTION   -->
+    <article id="rating-selection"
+      class="xl:w-3/12 w-[88%] font-Overpass  p-6 bg-DarkBlue rounded-xl h-fit flex flex-col space-y-6">
+      <div class="bg-MediumGrey rounded-full grid place-items-center w-10 h-10">
+        <img src="./images/icon-star.svg" class="w-5 h-5" />
+      </div>
+      <h1 class="text-white text-2xl font-bold">How did we do?</h1>
+      <p class="text-[15px] text-LightGrey">Please let us know how we did with your support request. All feedback is
+        appreciated
+        to help us improve our offering!</p>
+      <div class="flex flex-row justify-between">
+        <button class="hover:bg-Orange hover:text-white rating w-10 h-10 bg-MediumGrey text-LightGrey rounded-full"
+          value="1" role="button">1</button>
+        <button class="hover:bg-Orange hover:text-white rating w-10 h-10 bg-MediumGrey text-LightGrey rounded-full"
+          value="2" role="button">2</button>
+        <button class="hover:bg-Orange hover:text-white rating w-10 h-10 bg-MediumGrey text-LightGrey rounded-full"
+          value="3" role="button">3</button>
+        <button class="hover:bg-Orange hover:text-white rating w-10 h-10 bg-MediumGrey text-LightGrey rounded-full"
+          value="4" role="button">4</button>
+        <button class="hover:bg-Orange hover:text-white rating w-10 h-10 bg-MediumGrey text-LightGrey rounded-full"
+          value="5" role="button">5</button>
+      </div>
+      <input id="submitButton" class="bg-Orange rounded-full text-white py-2 hover:bg-white hover:text-Orange cursor-pointer"
+        type="button" value="SUBMIT" />
+    </article>
+
+    <!----THANK YOU SECTION-->
+    <article id="thankYouState" class="hidden xl:w-3/12 w-[88%] py-8 font-Overpass  p-5 bg-DarkBlue rounded-xl h-fit flex flex-col space-y-6"">
+      <div class=" grid place-items-center">
+        <img class="w-2/5" src="./images/illustration-thank-you.svg" />
+      </div>
+      <div class="mx-auto rounded-full text-sm text-center w-1/2 p-1 text-Orange bg-MediumGrey">
+        <p>You selected <span id="rating"></span> out of 5</p>
+      </div>
+      <p class="text-white text-center font-bold text-2xl">Thank you!</p>
+      <p class="text-[15px] text-center text-LightGrey">We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!</p>
+    </article>
+
+  </main>
+</body>
+</html>
